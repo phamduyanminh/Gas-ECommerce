@@ -18,6 +18,7 @@ app.use(helmet());
 app.use(compression())
 
 //Init db
+require('./dbs/init.mongodb');
 
 //Init routers
 app.get('/', (req, res, next) => {
