@@ -20,7 +20,9 @@ app.use(compression())
 //Init db
 require('./dbs/init.mongodb');
 const {countConnect} = require('./helpers/check.connect');
+const {checkOverload} = require('./helpers/check.connect');
 countConnect();
+checkOverload();
 
 //Init routers
 app.get('/', (req, res, next) => {
