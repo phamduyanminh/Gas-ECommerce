@@ -19,6 +19,8 @@ const checkOverload = () => {
         const numCores = os.cpus().length;
         const memoryUsage = process.memoryUsage().rss;
         //Example each core in your device can handle maximum 5 connection
+        //However, you should maximize the number of connections
+        //In this case you should use 3-4 connections for each core
         const maxConnections = numCores * 5;
         console.log(`Active connection: ${numConnection}`);
         console.log(`Memory usage: ${memoryUsage/1024/1024}MB`);
