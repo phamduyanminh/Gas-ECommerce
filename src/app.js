@@ -19,6 +19,8 @@ app.use(compression())
 
 //Init db
 require('./dbs/init.mongodb');
+const {countConnect} = require('./helpers/check.connect');
+countConnect();
 
 //Init routers
 app.get('/', (req, res, next) => {
