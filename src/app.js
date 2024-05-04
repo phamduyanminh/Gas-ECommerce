@@ -1,13 +1,15 @@
 /**
  * App.js is the middleware
  */
-
+require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const helmet = require('helmet');
 const compression = require('compression');
 
 const app = express();
+
+console.log(`Process: `, process.env);
 
 //Init middlewares
 //Morgan has 5 mode types: dev, combined, common, short, tiny
@@ -29,7 +31,7 @@ app.get('/', (req, res, next) => {
     const strCompress = 'Hello'
     return res.status(200).json({
         message: 'Welcome',
-        metadata: strCompress.repeat(100000)
+        //metadata: strCompress.repeat(100000)
     })
 });
 
