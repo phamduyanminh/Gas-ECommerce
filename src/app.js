@@ -26,14 +26,8 @@ const {checkOverload} = require('./helpers/check.connect');
 countConnect();
 checkOverload();
 
-//Init routers
-app.get('/', (req, res, next) => {
-    const strCompress = 'Hello'
-    return res.status(200).json({
-        message: 'Welcome',
-        //metadata: strCompress.repeat(100000)
-    })
-});
+//Init routes
+app.use('/', require('./routes'))
 
 //Handle errors
 
